@@ -5,9 +5,9 @@
 # because 26 / 13 has no remainder.)
 
 num=int(input('Please type a Number : '))
-lst = ['']
+lst = [ ]
 
-for i in range(num):
+for i in range(1,num,1):
     if num%i==0:
         lst.append(i)
 
