@@ -1,13 +1,13 @@
 import random
 
 num=random.randint(1,9)
-print(num)
+print("The Random Number is going to be ", num)
 
 guess=0
 count=1
 
 while guess!=num and guess!='exit':
-    guess=input("Guess the Number between 1 and 9")
+    guess=input("Guess the Number between 1 and 9 : ")
 
     if guess=='exit':
         break
