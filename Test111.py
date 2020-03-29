@@ -1,2 +1,1 @@
-Viththi
-Ananath
+print ("Viththi")
