@@ -2,20 +2,45 @@
 
 import random
 
+def game_play(list1,list2):
+    common_list=[i for i,j in zip(list1,list2) if i==j]
+    print(len(common_list),"Cows, ",(4-len(common_list)),"Bulls")
 
-str_num2=str(random.randint(1000,9999))
-list2=[int(j) for j in str_num2]
-print(list2)
+def game_win(list1,list2):
+    if list1==list2:
+        return ("Game Over")
+    else:
+        return("Game need to continue")
 
-input_num = input("Please Guess the 4 Digit Number : ")
-str_num1=str(input_num)
-list1=[int(i) for i in str(str_num1)]
+if __name__=="__main__":
+    print("Welcome to the Cows and Bulls Game")
+    print("I will generate a number, and you have to guess the numbers one digit at a time.")
+    print("For every number in the wrong place, you get a cow. For every one in the right place, you get a bull.")
+    print("The game ends when you get 4 Cows!")
+    print("Type exit at any prompt to exit.")
+    
+    str_num2=str(random.randint(1000,9999))
+    list2=[int(j) for j in str_num2]
+    print(list2)
+    guess=0
+    input_num=0
 
-common_list=[i for i,j in zip(list1,list2) if i==j]
-print(len(common_list),"Cows, ",4-len(common_list),"Bull"))
+#while guess!=num and guess!='exit':
+#    guess=input("Guess the Number between 1 and 9 : ")
+#
+#    if guess=='exit':
+#        break
 
-#def compare_num(num,input_num)
+    while True:
+        while input_num not in range(1000,9999):
+            input_num = input("Please Guess the 4 Digit Number : ")
+        
+        str_num1=str(input_num)
+        list1=[int(i) for i in str(str_num1)]
 
-#    print("Welcome to the Cows and Bulls Game")
-#    print("Enter a Number on your Guess")
-#    
+        game_play(list1,list2)
+        guess+=1
+        game_win(list1,list2)
+        if game_win(list1,list2)=="Game Over":
+            print("Number of Guesses Tried : ", guess)
+            break
