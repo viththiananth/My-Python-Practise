@@ -23,21 +23,21 @@ if __name__=="__main__":
     list2=[int(j) for j in str_num2]
     print(list2)
     guess=0
-    input_num=0
+    list1=[]
 
-#while guess!=num and guess!='exit':
-#    guess=input("Guess the Number between 1 and 9 : ")
-#
-#    if guess=='exit':
-#        break
+while True:
+    try :
+        input_num = int(input("Please Guess the 4 Digit Number >>> "))
+        if input_num in range(1000,10000):
+            break
+        else:
+            print("Number is in out of range, Please try again")
+    except:
+        print("Thats not an Number")
 
-    while True:
-        while input_num not in range(1000,9999):
-            input_num = input("Please Guess the 4 Digit Number : ")
-        
         str_num1=str(input_num)
         list1=[int(i) for i in str(str_num1)]
-
+        
         game_play(list1,list2)
         guess+=1
         game_win(list1,list2)

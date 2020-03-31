@@ -1,7 +1,9 @@
-a=[1,2,3,4,5,6,7,8,9]
-list1=[]
-#list2=list1.append(i for i in a if i%2==0)
-#print(list2)
-
-list1=[i for i in a if i%2==0]
-print(list1)
+while True:
+    try :
+        input_num = int(input("Please Guess the 4 Digit Number >>> "))
+        if input_num in range(1000,10000):
+            break
+        else:
+            print("Number is in out of range, Please try again")
+    except:
+        print("Thats not an Number")
