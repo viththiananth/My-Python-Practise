@@ -29,18 +29,19 @@ while True:
     try :
         input_num = int(input("Please Guess the 4 Digit Number >>> "))
         if input_num in range(1000,10000):
-            break
+            print("Test")
+            str_num1=str(input_num)
+            list1=[int(i) for i in str(str_num1)]
+            print (list1)
         else:
             print("Number is in out of range, Please try again")
     except:
         print("Thats not an Number")
 
-        str_num1=str(input_num)
-        list1=[int(i) for i in str(str_num1)]
+    game_play(list1,list2)
+    guess+=1
+    game_win(list1,list2)
         
-        game_play(list1,list2)
-        guess+=1
-        game_win(list1,list2)
-        if game_win(list1,list2)=="Game Over":
-            print("Number of Guesses Tried : ", guess)
-            break
+    if game_win(list1,list2)=="Game Over":
+        print("You Win. Game Over. Number of Guesses Tried : ", guess)
+        break        
