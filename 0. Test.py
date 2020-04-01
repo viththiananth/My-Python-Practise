@@ -1,11 +1,7 @@
-while True:
-    try :
-        input_num = int(input("Please Guess the 4 Digit Number >>> "))
-        if input_num in range(1000,10000):
-            break
-        else:
-            print("Number is in out of range, Please try again")
-    except:
-        print("Thats not an Number")
+def select_num():
+    user_num=0
+    while int(user_num) not in range (1000,10000):
+        user_num=int(input("Please Guess the 4 Digit Number >>>"))
+    return user_num
 
-print("Test Code")
+select_num()

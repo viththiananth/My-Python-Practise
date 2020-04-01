@@ -14,8 +14,9 @@ def game_win(list1,list2):
 
 def select_num():
     user_num=0
-    while user_num in range (1000,10000):
-        
+    while int(user_num) not in range (1000,10000):
+        user_num=int(input("Please Guess the 4 Digit Number >>>"))
+    return user_num
 
 if __name__=="__main__":
     print("Welcome to the Cows and Bulls Game")
@@ -33,16 +34,9 @@ if __name__=="__main__":
 game_on=True
 
 while game_on:
-    try :
-        input_num = input("Please Guess the 4 Digit Number >>> ")
-        if input_num in range(1000,10000):
-            str_num1=str(input_num)
-            list1=[int(i) for i in str(str_num1)]
-            print (list1)
-        else:
-            print("Number is in out of range, Please try again")
-    except:
-        print("Thats not an Correct Input")
+    str_num1=str(select_num())
+    list1=[int(i) for i in str(str_num1)]
+    print (list1)
 
     game_play(list1,list2)
     guess+=1
