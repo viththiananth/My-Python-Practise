@@ -1,1 +1,1 @@
-print (num)
+r=requests.get(url)
