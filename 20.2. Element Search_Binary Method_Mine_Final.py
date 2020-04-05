@@ -38,6 +38,6 @@ def find_number(list_number,num_to_check):
         print("Number not in List")
 
 l1 = [10,22,43,56,65,79,88,92,102,566]
-n1 = 92
+n1 = 43
 find_number(l1,n1)
     
