@@ -4,7 +4,7 @@ with open('file_to_save.txt','r') as f:
 
     while line:
         line=line.strip()
-        for line in Name_Counter:
+        if line in Name_Counter:
             Name_Counter[line]+=1
         else:
             Name_Counter[line]=1
